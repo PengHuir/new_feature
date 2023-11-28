@@ -3,6 +3,9 @@ package com.echo.feature.nine;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 
+/**
+ * VarHandle的基础使用
+ */
 public class VarHandleTest {
 
     int x = 0;
