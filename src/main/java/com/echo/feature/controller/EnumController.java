@@ -1,6 +1,6 @@
 package com.echo.feature.controller;
 
-import com.echo.feature.anno.EnumParam;
+import com.echo.feature.anno.EnumParamAnno;
 import com.echo.feature.entity.Res;
 import com.echo.feature.entity.VO.UserVO;
 import com.echo.feature.enums.StatusEnum;
@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * TODO
  *
+ *
  * @author ph.zhang
  * Created by on 2023/11/29 09:53
  */
@@ -22,7 +23,7 @@ import java.util.List;
 public class EnumController {
 
     @GetMapping("/list")
-    public Res<List<UserVO>> list(@EnumParam(parameterName = "statusNo") StatusEnum status) {
+    public Res<List<UserVO>> list(@EnumParamAnno(parameterName = "status", valueMethod = "getCode") StatusEnum status) {
         List<UserVO> users = new ArrayList<>();
 
         UserVO userVO = new UserVO();

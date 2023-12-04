@@ -1,6 +1,9 @@
 package com.echo.feature.entity.VO;
 
+import com.echo.feature.anno.StatusEnumAnno;
 import com.echo.feature.enums.StatusEnum;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,10 +27,19 @@ public class UserVO {
     /**
      * 名称
      */
+    @NotBlank(message = "名称不能为空")
     private String name;
+
+    /**
+     * 邮箱
+     */
+    @NotBlank(message = "邮箱不能为空")
+    private String email;
 
     /**
      * 在线状态
      */
+    @StatusEnumAnno(message = "在线状态不能为空")
+    @NotNull(message = "在线状态不能为空")
     private StatusEnum status;
 }

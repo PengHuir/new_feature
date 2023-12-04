@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 @Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface EnumParam {
+public @interface EnumParamAnno {
 
     String parameterName() default "";
 

@@ -21,4 +21,16 @@ public enum StatusEnum {
     private Integer code;
 
     private String desc;
+
+    public static StatusEnum getByCode(Integer code) {
+        if (code == null) {
+            return null;
+        }
+        for (StatusEnum statusEnum : StatusEnum.values()) {
+            if (statusEnum.getCode().equals(code)) {
+                return statusEnum;
+            }
+        }
+        return null;
+    }
 }
