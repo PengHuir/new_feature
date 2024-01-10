@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.echo.feature.mapper.BillMapper">
+    <resultMap id="BaseResultMap" type="com.echo.feature.entity.Bill">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="serial_no" jdbcType="VARCHAR" property="serialNo"/>
+        <result column="bill_no" jdbcType="VARCHAR" property="billNo"/>
+        <result column="seller_tax_no" jdbcType="VARCHAR" property="sellerTaxNo"/>
+        <result column="seller_name" jdbcType="VARCHAR" property="sellerName"/>
+        <result column="seller_address" jdbcType="VARCHAR" property="sellerAddress"/>
+        <result column="seller_phone" jdbcType="VARCHAR" property="sellerPhone"/>
+        <result column="seller_bank_account" jdbcType="VARCHAR" property="sellerBankAccount"/>
+        <result column="buyer_name" jdbcType="VARCHAR" property="buyerName"/>
+        <result column="buyer_tax_no" jdbcType="VARCHAR" property="buyerTaxNo"/>
+        <result column="buyer_address" jdbcType="VARCHAR" property="buyerAddress"/>
+        <result column="buyer_phone" jdbcType="VARCHAR" property="buyerPhone"/>
+        <result column="buyer_email" jdbcType="VARCHAR" property="buyerEmail"/>
+        <result column="buyer_bank_account" jdbcType="VARCHAR" property="buyerBankAccount"/>
+        <result column="terminal_code" jdbcType="VARCHAR" property="terminalCode"/>
+        <result column="drawer" jdbcType="VARCHAR" property="drawer"/>
+        <result column="payee" jdbcType="VARCHAR" property="payee"/>
+        <result column="checker" jdbcType="VARCHAR" property="checker"/>
+        <result column="invoice_type" jdbcType="VARCHAR" property="invoiceType"/>
+        <result column="original_bill_no" jdbcType="VARCHAR" property="originalBillNo"/>
+        <result column="original_invoice_code" jdbcType="VARCHAR" property="originalInvoiceCode"/>
+        <result column="original_invoice_no" jdbcType="VARCHAR" property="originalInvoiceNo"/>
+        <result column="operation_code" jdbcType="VARCHAR" property="operationCode"/>
+        <result column="total_price_tax" jdbcType="NUMERIC" property="totalPriceTax"/>
+        <result column="total_amount" jdbcType="NUMERIC" property="totalAmount"/>
+        <result column="total_tax" jdbcType="NUMERIC" property="totalTax"/>
+        <result column="open_status" jdbcType="VARCHAR" property="openStatus"/>
+        <result column="error_times" jdbcType="BIGINT" property="errorTimes"/>
+        <result column="error_description" jdbcType="VARCHAR" property="errorDescription"/>
+        <result column="remarks" jdbcType="VARCHAR" property="remarks"/>
+        <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="bill_status" jdbcType="VARCHAR" property="billStatus"/>
+        <result column="store_code" jdbcType="VARCHAR" property="storeCode"/>
+        <result column="bill_amount" jdbcType="NUMERIC" property="billAmount"/>
+        <result column="msg" jdbcType="VARCHAR" property="msg"/>
+        <result column="billing_service" jdbcType="VARCHAR" property="billingService"/>
+        <result column="invoice_source" jdbcType="VARCHAR" property="invoiceSource"/>
+        <result column="platform_no" jdbcType="VARCHAR" property="platformNo"/>
+        <result column="ldate" jdbcType="INTEGER" property="ldate"/>
+        <result column="bill_type" jdbcType="VARCHAR" property="billType"/>
+        <result column="org_code" jdbcType="VARCHAR" property="orgCode"/>
+        <result column="audit_status" jdbcType="VARCHAR" property="auditStatus"/>
+        <result column="is_removed" jdbcType="VARCHAR" property="isRemoved"/>
+        <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
+        <result column="op_type" jdbcType="VARCHAR" property="opType"/>
+        <result column="audit_authority" jdbcType="VARCHAR" property="auditAuthority"/>
+        <result column="bill_date" jdbcType="TIMESTAMP" property="billDate"/>
+        <result column="red_reason" jdbcType="VARCHAR" property="redReason"/>
+        <result column="red_advice_num" jdbcType="VARCHAR" property="redAdviceNum"/>
+        <result column="split_merge_status" jdbcType="VARCHAR" property="splitMergeStatus"/>
+        <result column="timing_invoice_msg" jdbcType="VARCHAR" property="timingInvoiceMsg"/>
+        <result column="is_removed2" jdbcType="VARCHAR" property="isRemoved2"/>
+        <result column="store_name" jdbcType="VARCHAR" property="storeName"/>
+        <result column="receive_invoice_phone_num" jdbcType="VARCHAR" property="receiveInvoicePhoneNum"/>
+        <result column="red_confirm_num" jdbcType="VARCHAR" property="redConfirmNum"/>
+        <result column="invoice_category" jdbcType="VARCHAR" property="invoiceCategory"/>
+        <result column="tax_method" jdbcType="VARCHAR" property="taxMethod"/>
+        <result column="invoicing_instructions" jdbcType="VARCHAR" property="invoicingInstructions"/>
+        <result column="machine_no" jdbcType="VARCHAR" property="machineNo"/>
+        <result column="special_invoice" jdbcType="VARCHAR" property="specialInvoice"/>
+        <result column="split_merge_confirm" jdbcType="VARCHAR" property="splitMergeConfirm"/>
+        <result column="link_status" jdbcType="VARCHAR" property="linkStatus"/>
+        <result column="sync_compass_status" jdbcType="SMALLINT" property="syncCompassStatus"/>
+        <result column="modify_date" jdbcType="TIMESTAMP" property="modifyDate"/>
+        <result column="modify_by" jdbcType="VARCHAR" property="modifyBy"/>
+        <result column="entered_by" jdbcType="VARCHAR" property="enteredBy"/>
+        <result column="entered_time" jdbcType="TIMESTAMP" property="enteredTime"/>
+        <result column="tax_login_account" jdbcType="VARCHAR" property="taxLoginAccount"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, serial_no, bill_no, seller_tax_no, seller_name, seller_address, seller_phone,
+    seller_bank_account, buyer_name, buyer_tax_no, buyer_address, buyer_phone, buyer_email, 
+    buyer_bank_account, terminal_code, drawer, payee, checker, invoice_type, original_bill_no, 
+    original_invoice_code, original_invoice_no, operation_code, total_price_tax, total_amount, 
+    total_tax, open_status, error_times, error_description, remarks, create_by, create_date, 
+    bill_status, store_code, bill_amount, msg, billing_service, invoice_source, platform_no, 
+    ldate, bill_type, org_code, audit_status, is_removed, parent_id, op_type, audit_authority, 
+    bill_date, red_reason, red_advice_num, split_merge_status, timing_invoice_msg, is_removed2, 
+    store_name, receive_invoice_phone_num, red_confirm_num, invoice_category, tax_method, 
+    invoicing_instructions, machine_no, special_invoice, split_merge_confirm, link_status, 
+    sync_compass_status, modify_date, modify_by, entered_by, entered_time, tax_login_account
+    </sql>
+
+</mapper>

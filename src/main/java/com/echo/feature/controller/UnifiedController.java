@@ -52,12 +52,14 @@ public class UnifiedController {
      * RequestResponseBodyMethodProcessor用于解析 @RequestBody 标注的参数、处理 @ResponseBody 标注方法的返回值
      * 解析 @RequestBoyd 标注参数的方法是 resolveArgument
      * org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor#resolveArgument
-     *      org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver#validateIfApplicable
-     *          org.springframework.validation.annotation.ValidationAnnotationUtils#determineValidationHints
-     *          如果注解中包含了@Valid、@Validated或者是名字以Valid开头的注解就进行参数校验
-     *              org.springframework.validation.DataBinder#validate
-     *              实际校验逻辑，最终会调用Hibernate Validator执行真正的校验
-     *              所以Spring Validation是对Hibernate Validation的二次封装
+     * org.springframework.web.servlet.mvc.method.annotation
+     * .AbstractMessageConverterMethodArgumentResolver#validateIfApplicable
+     * org.springframework.validation.annotation.ValidationAnnotationUtils#determineValidationHints
+     * 如果注解中包含了@Valid、@Validated或者是名字以Valid开头的注解就进行参数校验
+     * org.springframework.validation.DataBinder#validate
+     * 实际校验逻辑，最终会调用Hibernate Validator执行真正的校验
+     * 所以Spring Validation是对Hibernate Validation的二次封装
+     *
      * @param userVO
      */
     @PostMapping("/save")
