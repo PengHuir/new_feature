@@ -3,13 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="springCodeService" class="com.echo.feature.service.impl.SpringCodeService">
+    <bean id="springCodeService" class="com.echo.feature.code.service.impl.SpringCodeService">
         <property name="springCodeMapper" ref="springCodeMapper"/>
     </bean>
 
-    <bean id="springCodeMapper" class="com.echo.feature.service.dao.SpringCodeMapper"/>
+    <bean id="springCodeMapper" class="com.echo.feature.code.dao.SpringCodeMapper"/>
 
-    <bean id="companyFactoryBean" class="com.echo.feature.factory.bean.CompanyFactoryBean">
+    <bean id="companyFactoryBean" class="com.echo.feature.code.bean.CompanyFactoryBean">
         <property name="companyInfo" value="拉勾,中关村,500"/>
     </bean>
 </beans>
