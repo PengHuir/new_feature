@@ -7,18 +7,19 @@ import com.echo.feature.boot.entity.Bill;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
 
 @Slf4j
 public class BillMapperTest extends BaseTest {
 
-    @Resource
-    private BillMapper billMapper;
+    @Autowired
+    private BillMapper mapper;
 
     @Test
     public void testGetById() {
-        Bill bill = billMapper.selectById(196641L);
+        Bill bill = mapper.selectById(196641L);
         log.info("bill = {}", bill);
         assert Objects.nonNull(bill);
     }
@@ -26,7 +27,7 @@ public class BillMapperTest extends BaseTest {
     @Test
     public void testFindPage() {
         Page<Bill> billPage = new Page<>(1, 10);
-        IPage<Bill> pageRes = billMapper.selectPage(billPage, null);
+        IPage<Bill> pageRes = mapper.selectPage(billPage, null);
         log.info("pageRes = {}", pageRes);
         log.info("size = {}", pageRes.getRecords().size());
     }
